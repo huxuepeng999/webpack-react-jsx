@@ -8,10 +8,36 @@
     <title>
         <%= htmlWebpackPlugin.options.title %>
     </title>
+    <script src="./study/promise/promise2.js"></script>
 </head>
 
 <body>
     <div id="root" class="root"></div>
+    <div>123</div>
+    <script>
+        // const p = new Promise((resolve, reject) => {
+        //     resolve('ok')
+        //     // reject('err')
+        // })
+        // p.then((result) => {
+        //     console.log('res===1', result);
+        // }, (reason) => {
+        //     console.log('res===2', reason);
+        // })
+        // console.log('res===p', p);
+        const p2 = new Promise2((resolve, reject) => {
+            setTimeout(() => {
+                resolve('ok')
+                // reject('err')
+            }, 1000)
+        })
+        console.log('res==p2', p2);
+        p2.then((value) => {
+            console.log('res===1', value);
+        }, (reason) => {
+            console.log('res===err', reason);
+        })
+    </script>
     <!-- <script>
         function change() {
             console.log(document);

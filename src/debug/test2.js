@@ -46,12 +46,12 @@ async function a() {
     await b()
     console.log(2)
     console.log(10);
+    await b()
 }
 
 async function b() {
     console.log(3)
 }
-
 console.log(4)
 a()
 console.log(9);
@@ -65,7 +65,7 @@ new Promise((resolve)=>{
     console.log(7)
 })
 console.log(8);
-// 41368275
+// 413  9682 10 3 75
 
 
 

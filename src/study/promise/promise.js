@@ -110,16 +110,16 @@ MyPromise.prototype.then = function (func1, func2) {    //插入成功和失败�
     return nextPromise
 }
 
-MyPromise.race = function(promiseArr) {
-    return new MyPromise(function(resolve, reject) {
-        promiseArr.forEach(function(promise, index) {
+MyPromise.race = function (promiseArr) {
+    return new MyPromise(function (resolve, reject) {
+        promiseArr.forEach(function (promise, index) {
             promise(resolve, reject)
         })
     })
 }
 
-MyPromise.all = function(promiseArr) {
-    return new MyPromise(function(resolve, reject) {
+MyPromise.all = function (promiseArr) {
+    return new MyPromise(function (resolve, reject) {
         if (!Array.isArray(promiseArr)) {
             return reject(new TypeError('must be array'))
         }
@@ -127,14 +127,14 @@ MyPromise.all = function(promiseArr) {
         var promiseNum = promiseArr.length;
         var resolvedvalue = new Array(promiseNum)
         for (var i = 0; i < promiseNum; i++) {
-            (function(i) {
-                promiseArr[i].then(function(value) {
+            (function (i) {
+                promiseArr[i].then(function (value) {
                     countNum++
                     resolvedvalue[i] = value
                     if (countNum === promiseNum) {
                         return resolve(resolvedvalue)
                     }
-                }, function(reason) {
+                }, function (reason) {
                     return reject(reason)
                 })
             })(i)

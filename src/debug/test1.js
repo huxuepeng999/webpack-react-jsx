@@ -1,3 +1,14 @@
+// function a1(x) {
+//     console.log(x);
+//     return function a2(y) {
+//         console.log(y);
+//         return x + y
+//     }
+// }
+// const v = a1(2)(3)
+// console.log(v);
+
+
 // const f1 = (x) => x + 1;
 // const f2 = (x) => x * 2;
 // const f3 = (x) => x / 3;
@@ -37,11 +48,10 @@
 //     }
 // }
 // const r = repeat(console.log, 2000, 3)
-// console.log(r)
 // r('hello world')
 
 // const list = [1, 2, 4]
-// const square = num => {
+// const square = (num) => {
 //     return new Promise((resolve, reject) => {
 //         setTimeout(() => {
 //             console.log('ccc')
@@ -50,11 +60,12 @@
 //     })
 // }
 
-// function test() {
-//     list.forEach(async x => {
-//         const res = await square(x)
+// async function test() {
+//     for (let i = 0; i < list.length; i++) {
+//         const l = list[i];
+//         const res = await square(l)
 //         console.log(res)
-//     })
+//     }
 // }
 // test()
 // // 1, 4, 16
